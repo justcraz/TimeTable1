@@ -21,6 +21,7 @@ public class ClassroomWebUIController {
 
     @RequestMapping()
     String getAll(Model model) {
+        service.delete(id);
         System.out.println("Hello");
         model.addAttribute("rooms", service.getAll());
         return "classrooms";

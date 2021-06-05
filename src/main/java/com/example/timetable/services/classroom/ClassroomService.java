@@ -27,5 +27,9 @@ public class ClassroomService {
     public List<Classroom> getAll() {
         return classrooms;
     }
+    public void delete(String id) {
+        classrooms = classrooms .stream().filter(room->!room.getId().equals(id))
+                .collect(Collectors.toList());
+}
 }
 
